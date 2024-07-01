@@ -1,0 +1,34 @@
+@import "normalize.css";
+
+:root {
+  --black: #101010;
+  --black-hover: #626262;
+  --pink: #e2beff;
+  --white: #ffffff;
+  --gray: #f3f3f3;
+  --border-gray: #e8e8e8;
+}
+
+button,
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a {
+  padding: 0;
+  margin: 0;
+  font-family: "TT Commons", sans-serif;
+  font-weight: 400;
+  color: var(--black);
+}
+
+.container {
+  max-width: 1217px;
+  width: 100%;
+  margin: 0 auto;
+}
