@@ -80,7 +80,7 @@ const prevPage = (): void => {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: 50px;
+  margin-top: 31px;
 }
 
 .btn {

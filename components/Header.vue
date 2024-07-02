@@ -22,10 +22,14 @@
 
 <style scoped>
 .header {
-  margin: 35px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 35px;
+  display: flex;
 }
 
 .header-block {

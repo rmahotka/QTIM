@@ -70,7 +70,7 @@ const handlePrevPage = (): void => {
 
 <style scoped>
 .articles {
-  margin-top: 120px;
+  margin-top: 153px;
   margin-bottom: 140px;
 }
 
@@ -84,7 +84,7 @@ const handlePrevPage = (): void => {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   column-gap: 32px;
-  row-gap: 40px;
+  row-gap: 23px;
 }
 
 .articles-item {

@@ -54,20 +54,20 @@
 </template>
 
 <script setup lang="ts">
-import type { IInfoAdress } from '~/Types';
+import type { IInfoAdress } from "~/Types";
 const adressInfo = ref<IInfoAdress[]>([
   {
-    title: 'Office in Russia',
-    address: '139 Ruben Station Lake Drew, NM 52678',
+    title: "Office in Russia",
+    address: "139 Ruben Station Lake Drew, NM 52678",
   },
   {
-    title: 'Office in Dubai',
-    address: '139 Ruben Station Lake Drew, NM 52678',
+    title: "Office in Dubai",
+    address: "139 Ruben Station Lake Drew, NM 52678",
   },
 ]);
 
-const linksLeft = ref<string[]>(['Facebook', 'Instagram', 'Telegram']);
-const linksRight = ref<string[]>(['Behance', 'Linkedn', 'Privacy Policy']);
+const linksLeft = ref<string[]>(["Facebook", "Instagram", "Telegram"]);
+const linksRight = ref<string[]>(["Behance", "Linkedn", "Privacy Policy"]);
 </script>
 
 <style scoped>
@@ -96,7 +96,7 @@ const linksRight = ref<string[]>(['Behance', 'Linkedn', 'Privacy Policy']);
 .footer-block-title--bottom::before,
 .footer-block-title--bottom::after,
 .footer-block-title--top::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 16%;
   height: 1px;
@@ -180,13 +180,13 @@ const linksRight = ref<string[]>(['Behance', 'Linkedn', 'Privacy Policy']);
   cursor: pointer;
   text-decoration: none;
   border-bottom: 1px solid var(--black);
-  padding-bottom: 6px;
+  padding-bottom: 2px;
 }
 
 .half-circle-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  position: absolute;
+  right: 64.7%;
+  bottom: 0;
 }
 
 .half-circle {
