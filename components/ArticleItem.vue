@@ -1,22 +1,59 @@
 <template>
-  <div class="articl-item">
-    <img src="~/assets/img/1.png" alt="" />
-    <p class="articl-item-text">
-      One of the liveliest podcasts about working as a frontrunner. The authors
-      don't hesitate to use profanity, and in one episode they discuss a dozen
-      topics at once, from the meaning of life to finding the best jobs in St.
-      Petersburg for a junior position.
-    </p>
-    <NuxtLink to="/posts/1">Read more</NuxtLink>
+  <div
+    class="card"
+    @mouseenter="hoverCard(true)"
+    @mouseleave="hoverCard(false)"
+  >
+    <div class="articl-item" :class="{ hovered: hover }">
+      <img :src="data.image" :alt="data.title" />
+      <p class="articl-item-text">
+        {{ data.preview }}
+      </p>
+      <NuxtLink v-if="hover" :to="{ name: 'posts-id', params: { id: data.id } }"
+        >Read more</NuxtLink
+      >
+    </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { IInfoPost } from '~/Types';
+
+function defineProps<T>() {
+  throw new Error('Function not implemented.');
+}
+
+defineProps<{
+  data: IInfoPost;
+}>();
+
+const hover = ref<boolean>(false);
+
+const hoverCard = (bool: boolean): boolean => {
+  return (hover.value = bool);
+};
+</script>
 
 <style scoped>
-.articl-item {
-  /* height: 398px; */
+.card {
+  height: 414px;
   cursor: pointer;
+}
+
+.articl-item {
+  transition: transform 0.3s ease;
+}
+
+.articl-item.hovered {
+  transform: translateY(-20px);
+}
+
+.articl-item img {
+  min-width: 280px;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
 }
 
 .articl-item-text {

@@ -9,11 +9,13 @@
 </template>
 
 <script setup lang="ts">
+function defineProps<T>() {
+  throw new Error('Function not implemented.');
+}
+
+import type { IInfoAdress } from '~/Types';
 defineProps<{
-  info: {
-    title: string;
-    address: string;
-  };
+  info: IInfoAdress;
 }>();
 </script>
 

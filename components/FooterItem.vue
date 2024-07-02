@@ -4,7 +4,14 @@
       <div class="footer-top">
         <div class="footer-block-text">
           <p class="footer-block-subtitle">Is there a project?</p>
-          <p class="footer-block-title">Let’s work together</p>
+          <p>
+            <span class="footer-block-title footer-block-title--top"
+              >Let’s work</span
+            ><br />
+            <span class="footer-block-title footer-block-title--bottom"
+              >together</span
+            >
+          </p>
         </div>
         <div class="footer-block-contacts">
           <div class="contact-info">
@@ -31,7 +38,11 @@
             <NuxtLink to="#" external>{{ link }}</NuxtLink>
           </li>
         </ul>
-        <div class="circle">Go</div>
+        <div class="half-circle-wrapper">
+          <div class="half-circle">
+            <span>Go</span>
+          </div>
+        </div>
         <ul class="footer-link">
           <li v-for="link in linksRight" :key="link">
             <NuxtLink to="#" external>{{ link }}</NuxtLink>
@@ -43,24 +54,20 @@
 </template>
 
 <script setup lang="ts">
-interface IInfoAdress {
-  title: string;
-  address: string;
-}
-
+import type { IInfoAdress } from '~/Types';
 const adressInfo = ref<IInfoAdress[]>([
   {
-    title: "Office in Russia",
-    address: "139 Ruben Station Lake Drew, NM 52678",
+    title: 'Office in Russia',
+    address: '139 Ruben Station Lake Drew, NM 52678',
   },
   {
-    title: "Office in Dubai",
-    address: "139 Ruben Station Lake Drew, NM 52678",
+    title: 'Office in Dubai',
+    address: '139 Ruben Station Lake Drew, NM 52678',
   },
 ]);
 
-const linksLeft = ref<string[]>(["Facebook", "Instagram", "Telegram"]);
-const linksRight = ref<string[]>(["Behance", "Linkedn", "Privacy Policy"]);
+const linksLeft = ref<string[]>(['Facebook', 'Instagram', 'Telegram']);
+const linksRight = ref<string[]>(['Behance', 'Linkedn', 'Privacy Policy']);
 </script>
 
 <style scoped>
@@ -81,7 +88,34 @@ const linksRight = ref<string[]>(["Behance", "Linkedn", "Privacy Policy"]);
 
 .footer-block-title {
   font-size: 112px;
-  line-height: 1;
+  line-height: 100%;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-block-title--bottom::before,
+.footer-block-title--bottom::after,
+.footer-block-title--top::before {
+  content: '';
+  position: absolute;
+  bottom: 16%;
+  height: 1px;
+  background-color: var(--black);
+}
+
+.footer-block-title--bottom::before {
+  left: 0;
+  right: 300px;
+}
+
+.footer-block-title--bottom::after {
+  left: 155px;
+  right: 0;
+}
+
+.footer-block-title--top::before {
+  width: 100%;
+  left: 5px;
 }
 
 .footer-block-subtitle {
@@ -119,10 +153,12 @@ const linksRight = ref<string[]>(["Behance", "Linkedn", "Privacy Policy"]);
 }
 
 .footer-bootom {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 273px;
+  padding-bottom: 30px;
 }
 
 .footer-link {
@@ -147,17 +183,29 @@ const linksRight = ref<string[]>(["Behance", "Linkedn", "Privacy Policy"]);
   padding-bottom: 6px;
 }
 
-.circle {
-  position: relative;
+.half-circle-wrapper {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: flex-end;
+}
+
+.half-circle {
+  width: 358px;
+  height: 179px;
+  background-color: var(--black);
+  border-top-left-radius: 358px;
+  border-top-right-radius: 358px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+}
+
+.half-circle span {
   color: var(--white);
   font-size: 32px;
-  line-height: 32px;
-  width: 358px;
-  height: 358px;
-  border-radius: 100%;
-  background: var(--black);
+  margin-bottom: 25px;
 }
 </style>

@@ -7,8 +7,7 @@ export default defineNuxtConfig({
   },
   css: ["~/assets/css/main.css"],
   devtools: { enabled: true },
-  modules: ["@nuxt/fonts"],
-  fonts: {
-    families: [{ name: "TT Commons", provider: "none" }],
-  },
+    alias: {
+    '~types': '~/types'
+  }
 });
