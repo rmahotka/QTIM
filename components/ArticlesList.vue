@@ -44,19 +44,26 @@ const currentPosts = computed((): IInfoPost[] => {
   return props.dataPosts.slice(start, end);
 });
 
+const saveLocal = (page: string) => {
+  localStorage.setItem("page", page);
+};
+
 const handleChangePage = (page: number): void => {
   currentPage.value = page;
+  saveLocal(String(page));
 };
 
 const handleNextPage = (): void => {
   if (currentPage.value < totalPages.value) {
     currentPage.value++;
+    saveLocal(String(currentPage.value));
   }
 };
 
 const handlePrevPage = (): void => {
   if (currentPage.value !== 1) {
     currentPage.value--;
+    saveLocal(String(currentPage.value));
   }
 };
 </script>
