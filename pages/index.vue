@@ -1,6 +1,6 @@
 <template>
   <main class="container">
-    <div v-if="pending">Loading ...</div>
+    <div v-if="pending" class="panding"><span class="spiner"></span></div>
     <div v-else>
       <ArticlesList :dataPosts="dataPosts" />
     </div>
@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import type { IInfoPost } from '~/Types';
+import type { IInfoPost } from "~/Types";
 
 const dataPosts = ref<IInfoPost[]>([]);
 

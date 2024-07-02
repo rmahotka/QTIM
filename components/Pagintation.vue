@@ -2,23 +2,24 @@
   <div class="pagination">
     <button
       @click="prevPage(currentPage - 1)"
-      :disabled="currentPage === totalPages"
       class="btn btn-next"
       v-if="currentPage !== 1"
     >
       <IconsArrowPagination style="transform: rotate(180deg)" />
     </button>
+
     <button
-      v-for="page in 5"
+      v-for="page in visiblePage"
       :key="page"
       @click="changePage(page)"
       :class="['btn', { active: page === currentPage }]"
     >
       {{ page }}
     </button>
+
     <button
       @click="nextPage(currentPage + 1)"
-      :disabled="currentPage === totalPages"
+      v-if="currentPage !== totalPages"
       class="btn btn-next"
     >
       <IconsArrowPagination />
@@ -28,10 +29,10 @@
 
 <script setup lang="ts">
 function defineEmits<T>() {
-  throw new Error('Function not implemented.');
+  throw new Error("Function not implemented.");
 }
 function defineProps<T>() {
-  throw new Error('Function not implemented.');
+  throw new Error("Function not implemented.");
 }
 
 const props = defineProps<{
@@ -39,27 +40,37 @@ const props = defineProps<{
   currentPage: number;
 }>();
 
+const visiblePage = computed((): number[] => {
+  const startPage = Math.max(1, props.currentPage - 2);
+  const endPage = Math.min(props.totalPages, startPage + 4);
+  const pages = [];
+  for (let i = startPage; i <= endPage; i++) {
+    pages.push(i);
+  }
+  return pages;
+});
+
 const emit = defineEmits<{
-  (e: 'changePage', page: number): void;
-  (e: 'nextPage'): void;
-  (e: 'prevPage'): void;
+  (e: "changePage", page: number): void;
+  (e: "nextPage"): void;
+  (e: "prevPage"): void;
 }>();
 
 const changePage = (page: number): void => {
   if (page > 0 && page <= props.totalPages) {
-    emit('changePage', page);
+    emit("changePage", page);
   }
 };
 
 const nextPage = (): void => {
   if (props.currentPage < props.totalPages) {
-    emit('nextPage');
+    emit("nextPage");
   }
 };
 
 const prevPage = (): void => {
-  if (props.currentPage < props.totalPages) {
-    emit('prevPage');
+  if (props.currentPage !== 1) {
+    emit("prevPage");
   }
 };
 </script>

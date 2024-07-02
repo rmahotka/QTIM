@@ -21,10 +21,10 @@
 </template>
 
 <script setup lang="ts">
-import type { IInfoPost } from '~/Types';
+import type { IInfoPost } from "~/Types";
 
 function defineProps<T>() {
-  throw new Error('Function not implemented.');
+  throw new Error("Function not implemented.");
 }
 
 const props = defineProps<{
@@ -55,7 +55,7 @@ const handleNextPage = (): void => {
 };
 
 const handlePrevPage = (): void => {
-  if (currentPage.value < totalPages.value) {
+  if (currentPage.value !== 1) {
     currentPage.value--;
   }
 };
