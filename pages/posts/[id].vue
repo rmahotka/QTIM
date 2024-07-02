@@ -24,13 +24,13 @@ const { pending, data: post } = await useLazyFetch<IInfoPost>(
 
 <style scoped>
 .block-post {
+  margin-top: 152px;
   margin-bottom: 80px;
 }
 
 .title {
   font-size: 84px;
   line-height: 84px;
-  margin-top: 119px;
   margin-bottom: 73px;
 }
 
@@ -38,7 +38,7 @@ const { pending, data: post } = await useLazyFetch<IInfoPost>(
   width: 100%;
   height: 700px;
   object-fit: cover;
-  margin-bottom: 80px;
+  margin-bottom: 73px;
 }
 
 .post-block-text {
