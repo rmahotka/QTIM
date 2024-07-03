@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div v-if="pending" class="panding"><span class="spiner"></span></div>
+    <div v-if="pending" class="panding"><span class="spiner" /></div>
     <div v-else class="block-post">
       <h1 class="title">{{ post?.title }}</h1>
       <img :src="post?.image" :alt="post?.title" />

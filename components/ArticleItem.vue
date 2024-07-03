@@ -9,18 +9,21 @@
       <p class="articl-item-text">
         {{ data.preview }}
       </p>
-      <NuxtLink v-if="hover" :to="{ name: 'posts-id', params: { id: data.id } }"
-        >Read more</NuxtLink
+      <NuxtLink
+        v-if="hover"
+        :to="{ name: 'posts-id', params: { id: data.id } }"
       >
+        Read more
+      </NuxtLink>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import type { IInfoPost } from '~/Types';
+import type { IInfoPost } from "~/Types";
 
 function defineProps<T>() {
-  throw new Error('Function not implemented.');
+  throw new Error("Function not implemented.");
 }
 
 defineProps<{

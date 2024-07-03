@@ -5,24 +5,25 @@
         <div class="footer-block-text">
           <p class="footer-block-subtitle">Is there a project?</p>
           <p>
-            <span class="footer-block-title footer-block-title--top"
-              >Let’s work</span
-            ><br />
-            <span class="footer-block-title footer-block-title--bottom"
-              >together</span
-            >
+            <span class="footer-block-title footer-block-title--top">
+              Let’s work
+            </span>
+            <br />
+            <span class="footer-block-title footer-block-title--bottom">
+              together
+            </span>
           </p>
         </div>
         <div class="footer-block-contacts">
           <div class="contact-info">
             <p class="contact-title">For all questions</p>
             <div class="contact-data">
-              <a class="contact-phone" href="tel:+7 (920) 278—00—68"
-                >+7 (920) 278—00—68</a
-              >
-              <a class="contact-mail" href="mailto:qtim@agency.com"
-                >qtim@agency.com</a
-              >
+              <a class="contact-phone" href="tel:+7 (920) 278—00—68">
+                +7 (920) 278—00—68
+              </a>
+              <a class="contact-mail" href="mailto:qtim@agency.com">
+                qtim@agency.com
+              </a>
             </div>
           </div>
           <ContactAdress
