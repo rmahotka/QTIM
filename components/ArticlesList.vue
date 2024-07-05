@@ -22,10 +22,7 @@
 
 <script setup lang="ts">
 import type { IInfoPost } from "~/Types";
-
-function defineProps<T>() {
-  throw new Error("Function not implemented.");
-}
+import { defineProps } from "vue";
 
 const props = defineProps<{
   dataPosts: IInfoPost[];

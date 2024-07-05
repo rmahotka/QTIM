@@ -28,12 +28,7 @@
 </template>
 
 <script setup lang="ts">
-function defineEmits<T>() {
-  throw new Error("Function not implemented.");
-}
-function defineProps<T>() {
-  throw new Error("Function not implemented.");
-}
+import { defineProps, defineEmits } from "vue";
 
 const props = defineProps<{
   totalPages: number;
